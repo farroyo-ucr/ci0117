@@ -22,6 +22,7 @@ int main( int argc, char ** argv ) {
    while ( strlen( html_labels[ i ] ) ) {
       st = m.Enviar( html_labels[ i ], i, 2020 );	// Send a message with 2020 type (label, n)
       printf( "Label: %s, status %d \n", html_labels[ i ], st );
+      i++;
    }
 
 }
