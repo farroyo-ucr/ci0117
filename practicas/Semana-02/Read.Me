@@ -1,0 +1,48 @@
+Read.Me
+
+  [Ejercicio propuesto: 2020/Mar/17; entrega 2020/Abr/24]
+
+  Objetivo
+      Completar la clase para paso de mensajes
+      Realizar pruebas con memoria compartida
+
+  Funcionamiento
+     Para el paso de mensajes, la idea de para llevar a cabo la sincronización
+  de procesos es que un proceso no puede recibir un mensaje que no ha sido
+  enviado, por lo que debe esperar hasta que llegue, semejante al "Wait" de un
+  semáforo.  De esta manera, cuando queremos que un evento E1 ocurra después de
+  otro E2, el proceso encargado de E2 deberá esperar un mensaje antes de
+  comenzar con ese evento, otro proceso, encargado de realizar E1, deberá
+  completarlo y luego enviar el mensaje.
+
+  Este esquema de paso de mensajes es denominado indirecto, pues se está
+  utilizando un buzón para la transferencia de mensajes.  En el esquema
+  directo los procesos intercambian mensajes sin intermediario.
+
+  Paso de mensajes por medio de sistemas Linux, descripción lógica
+
+    -----------                     -----------
+   |           |                   |           |
+   | Proceso P |                   | Proceso Q |
+   |           |                   |           |
+    -----------\                   / -----------
+                \                 /
+                 \ --------------/
+                  | Buzon A12345 |
+                  |              |
+                  | Sist. Oper.  |
+                   --------------
+
+   El buzón tiene que ser creado por alguno de los procesos, para eso vamos a
+   tener el constructor de la clase.
+
+- Completar la clase Buzon para poder enviar y recibir mensajes entre distintos
+  procesos de una misma computadora.  Se facilita la interfaz Buzon.h.
+
+     Buzon, constructor (mgsget)
+     ~Buzon, destructor (msgctl)
+     Enviar, para enviar mensajes (msgsnd)
+     Recibir, para recibir mensajes (msgrcv)
+
+
+

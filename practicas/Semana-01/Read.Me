@@ -1,0 +1,38 @@
+Read.Me
+
+  [Ejercicio propuesto: 2020/Mar/10; entrega 2020/Abr/17]
+
+  Objetivo
+      Completar la clase para semáforos
+
+  Funcionamiento
+     Para lograr la sincronización de procesos por medio de semáforos, queremos
+  que uno de los procesos espera hasta que otro proceso le indique que puede
+  continuar.  Es por ello que esta clase, tiene facilidad para realizar ambas
+  tareas, una para bloquear los procesos "Wait" y otra para avisar que pueden
+  continuar "Signal".
+
+    -----------                     -----------
+   |           |                   |           |
+   | Proceso P |                   | Proceso Q |
+   |           |                   |           |
+    -----------\                   / -----------
+                \                 /
+                 \ --------------/
+                  | Sem.  A12345 |
+                  |              |
+                  | Sist. Oper.  |
+                  |   (LINUX)    |
+                   --------------
+
+   El semáforo tiene que ser creado por alguno de los procesos, para eso vamos a
+   tener el constructor de la clase.
+
+ - Completar la clase Semaforo para poder sincronizar procesos de una misma 
+   computadora.  Se facilita la interfaz Semafofo.h.
+
+      Semaforo: constructor (semget y semctl)
+     ~Semaforo: destructor (semctl)
+      Wait, Signal: operadores (semop)
+
+
