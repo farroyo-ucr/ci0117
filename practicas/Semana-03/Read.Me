@@ -3,65 +3,69 @@ Read.Me
   [Ejercicio propuesto: 2020/Mar/24; entrega 2020/May/01]
 
   Objetivo
-      Completar la clase para intercambio de mensajes entre computadoras que
-   no comparten memoria
+      Completar la clase para intercambio de mensajes entre computadoras que no comparten memoria
+
+   Introducción
+      Hasta ahora hemos hecho comunicación de procesos en una sola máquina, esto quiere decir que los procesos
+      corren en la misma máquina, la misma memoria física, por lo que lo podemos denominar "Memoria Centralizada".
+         - Paso de Mensajes
+         - Semáforos y memoria compartida
 
   Funcionamiento
-     Hasta el momento hemos realizado sincronización de procesos utilizando
-  procesos de una misma máquina, que comparten memoria, hecho que denominaremos
-  "Memoria Compartida".  En esta tarea, vamos a completar la posibilidad de que
-  procesos que no comparten memoria puedan intercambiar mensajes y realizar
-  tareas de manera sincrónica.
+     Hasta el momento hemos realizado sincronización de procesos utilizando procesos de una misma máquina, que
+     comparten memoria, hecho que denominaremos "Memoria Compartida".  En esta tarea, vamos a completar la
+     posibilidad de que procesos que no comparten memoria puedan intercambiar mensajes y realizar tareas de manera
+     sincrónica.
 
-     Uno de los esquemas para lograr esta comunicación es "Cliente-Servidor",
-  en el que uno de los procesos en una computadora lo denominaremos "cliente"
-  y al otro, en otra computadora "servidor".  Requerimos que ambas computadoras
-  estén enlazadas por un canal de comunicación (red local).  Ya no es necesario
-  que ambos programas corran bajo el mismo sistemas operativo.
+     Ahora vamos a trabajar con la comunicación entre varias máquinas, que no comparten memoria y que podemos
+     denominar "Memoria Distribuida".  Siempre vamos a tener dos (o más) procesos que se comunican entre sí, pero
+     ahora residen en máquinas distintas, que inclusive pueden tener sistemas operativos diferentes, pero que deben
+     compartir un mismo protocolo de comunicación para que puedan entenderse.
 
-     En esta primera entrega, vamos a crear los métodos de una clase "Socket"
-  para lograr que un proceso cliente se pueda conectar a un servidor.  En una
-  segunda entrega, vamos a completar esta clase "Socket" con otros métodos
-  para que tenga la funcionalidad requerida por un servidor.
+     Uno de los esquemas para lograr esta comunicación es "Cliente-Servidor", en el que uno de los procesos en una 
+     computadora lo denominaremos "cliente" y al otro, en otra computadora "servidor".  Requerimos que ambas
+     computadoras estén enlazadas por un canal de comunicación (red local).  Ya no es necesario que ambos programas
+     corran bajo el mismo sistemas operativo.
 
-  Paso de mensajes por medio de sistemas Linux, descripción lógica
+     En esta primera entrega, vamos a crear los métodos de una clase "Socket" para lograr que un proceso cliente
+     se pueda conectar a un servidor.  En una segunda entrega, vamos a completar esta clase "Socket" con otros
+     métodos para que tenga la funcionalidad requerida por un servidor.
 
-  ________________                                ________________
- |                |                              |                |
- |   -----------  |                              |   -----------  |
- |  |           | |                              |  |           | |
- |  | Proceso C | |                              |  | Proceso S | |
- |  |           | |                              |  |           | |
- |   -----------  |                              |   -----------  |
- |                |                              |                |
- |  ============  |                              |  ============  |
- |  +          +  |         /~~~~~~~~~~\         |  +          +  |
- |  + Sist. Op.+  |         |  Red de  |         |  + Sist. Op.+  |
- |  +  (Linux) +  |<------->|  comunic.|<------->|  + (Linux)  +  |
- |  ============  |         \~~~~~~~~~~/         |  ============  |
- |   Máquina A    |                              |   Máquina B    |
- |________________|                              |________________|
+     Paso de mensajes por medio de sistemas Linux, descripción lógica
 
-      Para lograr la comunicación del proceso C con el proceso S, es necesario
-   contar con la dirección del equipo donde reside el proceso S, o sea B,
-   además requerimos la ubicación del proceso S.  En la jerga de redes de
-   comunicación, la ubicación del proceso S es denominado puerto.  Por lo tanto,
-   para establecer la comunicación entre estos dos procesos, vamos a requerir
-   ambos componentes.  Deben estudiar los llamados al sistema indicados para
-   entender como desarrollar esta clase.
+      ________________                                ________________
+     |                |                              |                |
+     |   -----------  |                              |   -----------  |
+     |  |           | |                              |  |           | |
+     |  | Proceso C | |                              |  | Proceso S | |
+     |  |           | |                              |  |           | |
+     |   -----------  |                              |   -----------  |
+     |                |                              |                |
+     |  ============  |                              |  ============  |
+     |  +          +  |         /~~~~~~~~~~\         |  +          +  |
+     |  + Sist. Op.+  |         |  Red de  |         |  + Sist. Op.+  |
+     |  +  (Linux) +  |<------->|  comunic.|<------->|  + (Linux)  +  |
+     |  ============  |         \~~~~~~~~~~/         |  ============  |
+     |   Máquina A    |                              |   Máquina B    |
+     |________________|                              |________________|
 
 
-- Completar la clase "Socket" para poder intercambiar mensajes entre procesos
-  que no comparten memoria.  Se facilita la interfaz "Socket.h".  Para la
-  primera etapa deben completar:
-     Socket, el constructor (socket)
-     Close, para destruir el Socket (close)
-     Connect, para conectarse (connect)
-     Read, para leer información por el Socket (read)
-     Write, para escribir por el Socket (write)
+     Para lograr la comunicación del proceso C con el proceso S, es necesario contar con la dirección del equipo
+     donde reside el proceso S, o sea B, además requerimos la ubicación del proceso S.  En la jerga de redes de 
+     comunicación, la ubicación del proceso S es denominado puerto.  Por lo tanto, para establecer la comunicación
+     entre estos dos procesos, vamos a requerir ambos componentes.  Deben estudiar los llamados al sistema indicados
+     para entender como desarrollar esta clase.
 
-  Los ejemplos "ipv4-test.cc" y "ipv6-test.cc" deben funcionar
+   Tareas
 
+      - Completar la clase "Socket" para poder intercambiar mensajes entre procesos
+        que no comparten memoria.  Se facilita la interfaz "Socket.h".  Para la
+        primera etapadeben completar:
+           Socket, el constructor (socket)
+           Close, para destruir el Socket (close)
+           Connect, para conectarse (connect)
+           Read, para leer información por el Socket (read)
+           Write, para escribir por el Socket (write)
 
-
+      - Los ejemplos "ipv4-test.cc" y "ipv6-test.cc" deben funcionar correctamente
 

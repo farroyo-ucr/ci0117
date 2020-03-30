@@ -1,9 +1,9 @@
-Read.Me
-
   [Ejercicio propuesto: 2020/Mar/10; entrega 2020/Abr/17]
 
-  Objetivo
-      Completar la clase para semáforos
+  Objetivos
+      Entender el funcionamiento de los "Makefile"
+      Creación de procesos en Unix (Linux) [fork]
+      Completar la implantación de la clase para semáforos
 
   Funcionamiento
      Para lograr la sincronización de procesos por medio de semáforos, queremos
@@ -28,11 +28,26 @@ Read.Me
    El semáforo tiene que ser creado por alguno de los procesos, para eso vamos a
    tener el constructor de la clase.
 
- - Completar la clase Semaforo para poder sincronizar procesos de una misma 
-   computadora.  Se facilita la interfaz Semafofo.h.
 
-      Semaforo: constructor (semget y semctl)
-     ~Semaforo: destructor (semctl)
-      Wait, Signal: operadores (semop)
+Procedimiento
 
+   a) Entender el funcionamiento de los "Makefile"
+
+   b) Creación de procesos en Unix (Linux) [fork]
+      Correr el ejemplo provisto "PiPorSeries.c"
+         Crear un documento de texto y anotar los resultados obtenidos
+
+   c) Semáforos: construir la implantación de la clase
+   
+      Completar la clase Semaforo para poder sincronizar procesos de una misma 
+      computadora.  Se facilita la interfaz Semafofo.h.
+
+     - Llamados al sistema a utilizar
+         Constructor: semget, semctl
+
+         Destructor: semctl
+         Signal: semop
+         Wait: semop
+
+      - Lograr que el ejemplo: pruebaSem funcione correctamente
 
