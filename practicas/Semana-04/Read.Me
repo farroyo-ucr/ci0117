@@ -1,0 +1,56 @@
+Read.Me Semana 4
+
+[Ejercicio propuesto: 2020/Mar/31; entrega 2020/May/08]
+
+Objetivo
+   Completar la clase para intercambio de mensajes entre computadoras que no comparten memoria
+   Agregar la funcionalidad del servidor
+
+Introducción
+   Vamos a construir un servidor que sea capaz de atender cada solicitud por medio de un proceso separado (fork)
+
+Funcionamiento
+
+   En esta segunda entrega, vamos a crear los métodos de una clase "Socket" para lograr que un proceso servidor
+   pueda atender solicitudes de los clientes.  Para que ambos procesos puedan "comunicarse" va a ser necesario
+   definir un protocolo que ambos entiendan.  En nuestro caso, este protocolo será muy sencillo.
+
+   Paso de mensajes por medio de sistemas Linux, descripción lógica
+
+      ________________                                ________________
+     |                |                              |                |
+     |   -----------  |                              |   -----------  |
+     |  |           | |                              |  |           | |
+     |  | Proceso C | |                              |  | Proceso S | |
+     |  |           | |                              |  |           | |
+     |   -----------  |                              |   -----------  |
+     |                |                              |                |
+     |  ============  |                              |  ============  |
+     |  +          +  |         /~~~~~~~~~~\         |  +          +  |
+     |  + Sist. Op.+  |         |  Red de  |         |  + Sist. Op.+  |
+     |  +  (Linux) +  |<------->|  comunic.|<------->|  + (Linux)  +  |
+     |  ============  |         \~~~~~~~~~~/         |  ============  |
+     |   Máquina A    |                              |   Máquina B    |
+     |________________|                              |________________|
+
+
+
+Tareas
+
+   - Completar la clase "Socket" para poder intercambiar mensajes entre procesos que no comparten memoria.
+     Se facilita la interfaz "Socket.h" y la parte básica de la implantación "Socket.cc"
+     Para esta etapa deben completar:
+        Socket( int ), otro constructor que recibe un entero como parámetro
+        Listen( int ), marca el socket como pasivo, es decir que va a recibir conexiones por medio de Accept (listen),
+           el parámetro establece el tamaño de la cola (backlog)
+        Bind( int ), para relacionar este socket con el proceso (bind), el parámetro determina el # de puerto a utilizar
+        Socket * Accept, para establecer conexiones con este servidor (accept)
+        Shutdown( int ), cierra parcialmente el Socket de acuerdo con el parámetro
+
+   - Los ejemplos "MirrorServerTest.cc" y "MirrorClientTest.cc" deben funcionar correctamente
+
+Referencias
+   https://os.ecci.ucr.ac.cr/ci1320/material/sockets-course.2006.ppt
+   https://os.ecci.ucr.ac.cr/ci1321/lab4.html
+
+
