@@ -28,6 +28,8 @@ double calcularSumaParcialPi( double Pi[], int proceso, long inicial, long termi
       alterna *= -1;				// Pasa de 4 a -4 y viceversa, para realizar la aproximacion de los terminos
    }
    Pi[ proceso ] = casiPi;			// Guarda el resultado en el vector y finaliza
+   printf("Valor calculado %g \n", casiPi );
+
    exit( 0 );
 }
 
