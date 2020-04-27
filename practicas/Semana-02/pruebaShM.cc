@@ -3,8 +3,11 @@
 #include <sys/shm.h>
 #include <string.h>
 #include <wait.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
 
-#include "Semaphore.h"
+#include "Semaforo.h"
 
 int main() {
 
@@ -12,7 +15,7 @@ int main() {
    Semaforo s;
    int id = shmget( 123456, 1024, 0700 | IPC_CREAT );
    char * area = (char *) shmat( id, NULL, 0 );
-   char * var = "Area de memoria compartida 2020";
+   char * var = (char *) "Area de memoria compartida 2020";
    char newvar[100];
 
    if ( fork() ) {
