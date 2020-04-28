@@ -1,0 +1,54 @@
+Read.Me Semana 5
+
+[Ejercicio propuesto: 2020/Abr/27; entrega 2020/May/15]
+
+Objetivos
+   Aplicar los términos "SpeedUp" y "Efficiency" en ejemplos de asignación de tareas
+   Aplicar los conocimientos para medir el tiempo de los programas
+   Aprender sobre programas con hilos en Java y Python
+
+
+Tareas a realizar
+
+   - Para la explicaciones debe crear un documento (pdf) y adjuntarlo en el repositorio
+
+a) 
+   - Revisar el ejemplo provisto de asignación de tareas: "AsignacionTareasATrabajadores.txt"
+      - Primera tabla distribución de tiempos similar para las tareas
+      - Segunda tabla distribución con crecimiento exponencial en los tiempos de las tareas
+
+   - Construir una hoja electrónica para realizar los cálculos dada una distribución de tiempos de las tareas
+      - Debe entregar la hoja electrónica
+      - Utilizar cuatro trabajadores
+      - Utilizar los mismos esquemas de mapeo:
+         - Estático por bloque
+         - Estático cíclico
+         - Dinámico
+      - Utilizar los siguientes datos para los tiempos de las tareas
+         - [12, 60, 70, 20, 40, 60, 40, 13, 80, 60, 13, 11, 30, 12], total = 521
+         - Calcular el "speedup" y "efficiency"
+
+b)
+   - Convertir el programa "PiPorSeriesConMensajes.c" para que utilice su clase "Buzon"
+      - Debe entregar otro programa que utilice su clase para paso de mensajes
+      - Debe entregar un Makefile
+
+c)
+   - Revise los programas en Java "PiPorSeries.java" y "PiPorSeriesThreads.java"
+      - Analice la manera en que Java crea hilos de ejecución
+      - En el programa por hilos, explique la funcionalidad de la clase "Suma"
+      - Construya otro programa Java que utilice vector de objetos "Double"
+         - ¿Es posible hacer el cálculo con solo un objecto "Double"?
+
+d)
+   - Revise los programas "SumaUno.c" y "SumaUnoNoRaceCondition.c"
+      - Analice la manera de medir el tiempo en los programas
+      - Compruebe que "SumaUno.c" tiene problemas de condición de carrera
+      - Explique cómo se resuelve la condición de carrera en "SumaUnoNoRaceCondition.c"
+      - Construya un nuevo programa "SumaUnoSem.cc" que utilice su clase de semáforos
+      - Agregue las reglas en su "Makefile"
+
+
+Referencias:
+   - Libro de texto, capítulo 2
+
