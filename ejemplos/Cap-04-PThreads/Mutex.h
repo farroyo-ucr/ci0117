@@ -15,9 +15,9 @@ class Mutex {
 public:
    Mutex();
    ~Mutex();
-   void Lock();
-   void TryLock();
-   void Unlock();
+   int Lock();
+   int TryLock();
+   int Unlock();
 
 private:
    pthread_mutex_t * mutex;

@@ -72,15 +72,15 @@ long SerialTest( long hilos ) {
 
 
 /*
-  Fork test with race condition
+  Fork test with NO race condition
 */
 long ForkTestNoRaceCondition( long hilos ) {
    long hilo;
    pthread_t * pthilos;
 
    mutex = new Mutex();
+   pthilos = (pthread_t *) calloc( hilos, sizeof( pthread_t ) );
 
-   pthilos = (pthread_t *) malloc( hilos * sizeof( pthread_t ) );
    for ( hilo = 0; hilo < hilos; hilo++ ) {
       pthread_create( & pthilos[ hilo ], NULL, AddOneWithMutex, (void *) hilo );
    }
@@ -90,6 +90,7 @@ long ForkTestNoRaceCondition( long hilos ) {
    }
 
    free( pthilos );
+   delete mutex;
 
    return total;
 
@@ -102,7 +103,7 @@ long ForkTestRaceCondition( long hilos ) {
    long hilo;
    pthread_t * pthilos;
 
-   pthilos = (pthread_t *) malloc( hilos * sizeof( pthread_t ) );
+   pthilos = (pthread_t *) calloc( hilos, sizeof( pthread_t ) );
    for ( hilo = 0; hilo < hilos; hilo++ ) {
       pthread_create( & pthilos[ hilo ], NULL, AddOne, (void *) hilo );
    }

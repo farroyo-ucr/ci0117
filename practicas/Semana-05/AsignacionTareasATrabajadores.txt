@@ -15,7 +15,7 @@ Tiempos totales por trabajador
  ---------------------
 | A | B | C | D | Max | <- Trabajador
 |---------------------|
-| 6 | 5 | 7 | 3 |  7  | <- MapEpB (SpeedUp 21/6 = 3.0, Efficiency 3.0/4 = 0.75)
+| 6 | 5 | 7 | 3 |  7  | <- MapEpB (SpeedUp 21/7 = 3.0, Efficiency 3.0/4 = 0.75)
 | 5 | 7 | 5 | 4 |  7  | <- MapEC  (SpeedUp 21/7 = 3.0, Efficiency 3.0/4 = 0.75)
 | 5 | 6 | 4 | 6 |  6  | <- MapD   (SpeedUp 21/6 = 3.5, Efficiency 3.5/4 = 0.875)
  ---------------------
