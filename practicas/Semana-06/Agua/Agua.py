@@ -72,15 +72,15 @@ class Agua ( threading.Thread ):
 	def run(self):	# Create randomly hydrogens and oxygens
 		r = random.randint( 1, 10 )
 		if ( 0 == (r % 2) ):
-			print "Starting O thread " + str( self.threadID ) + " ... cO(" + str(self.resources.getO()) + "), cH(" + str(self.resources.getH()) + ")"
+			print( "Starting O thread " + str( self.threadID ) + " ... cO(" + str(self.resources.getO()) + "), cH(" + str(self.resources.getH()) + ")" )
 			self.O()
 		else:
-			print "Starting O thread " + str( self.threadID ) + " ... cO(" + str(self.resources.getO()) + "), cH(" + str(self.resources.getH()) + ")"
+			print( "Starting O thread " + str( self.threadID ) + " ... cO(" + str(self.resources.getO()) + "), cH(" + str(self.resources.getH()) + ")" )
 			self.H()
 
 	def H( self ):	# Represent an hydrogen particle
 		if ( (self.resources.getO() > 0) and (self.resources.getH() > 0) ):
-			print "\tH particle making water :) ... " + str( self.threadID ) + " ... cO(" + str(self.resources.getO()) + "), cH(" + str(self.resources.getH()) + ")"
+			print( "\tH particle making water :) ... " + str( self.threadID ) + " ... cO(" + str(self.resources.getO()) + "), cH(" + str(self.resources.getH()) + ")" )
 			self.resources.decH()
 			self.resources.decO()
 			self.resources.signalO()
@@ -91,7 +91,7 @@ class Agua ( threading.Thread ):
 
 	def O( self ):	# Represent an oxygen particle
 		if ( self.resources.getH() > 1 ):
-			print "\tO particle making water :) ... " + str( self.threadID ) + " ... cO(" + str(self.resources.getO()) + "), cH(" + str(self.resources.getH()) + ")"
+			print(  "\tO particle making water :) ... " + str( self.threadID ) + " ... cO(" + str(self.resources.getO()) + "), cH(" + str(self.resources.getH()) + ")" )
 			self.resources.decH()
 			self.resources.decH()
 			self.resources.signalH()

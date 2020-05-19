@@ -1,4 +1,4 @@
-Read.Me Semana 5
+Read.Me Semana 6
 
 [Ejercicio propuesto: 2020/May/15; entrega 2020/May/22]
 
@@ -18,28 +18,31 @@ a)
       - Revise el enunciado del problema
       - En el directorio "Agua"
          - Analice la solución en C++ y empleando "fork", corra este ejemplo y explique la salida
-         - Cambie el código para que emplee su clase de semáforos, debe entregar este programa
+         - Cambie el código para controlar las condiciones de carrera y emplee su clase de semáforos, debe entregar este programa
          - Revise la solución en Java
             - Explique cómo se sincronizan los hilos
+            - Explique cómo es manejada las condiciones de carrera
          - Revise la solución en Python
             - Explique cómo se sincronizan los hilos
-         - Programe una solución empleando "std", deben entregar este programa
+            - Explique cómo es manejada las condiciones de carrera
+         - Programe una solución empleando "std::" que realice el control de concurrencia correctamente, deben entregar este programa
 
 b)
    - Problema de los filósofos comensales
       - Revise el enunciado del problema
+      - Explique ¿Qué es un monitor? y ¿Qué son variables de condición?
       - En el directorio "DiningPhilo/ForkandSemaphores/"
          - Revise la implantación de la clase "Semaphore"
             - Explique el funcionamiento de los métodos "SP" y "SV"
          - Revise la solución con procesos "philoFork-gv.cc"
             - Explique la manera de manipular la pantalla y de desplegar la salida en el cuadro
-            - Estudie la solución y explique cuáles son las variables globles y cómo se utilizan
+            - Estudie la solución y explique cuáles son las variables globales y cómo se utilizan
             - Explique la manera en que se realiza la sincronización de los procesos
 
          - Revise la solución con procesos "philoFork-ngv.cc"
             - Estudie la solución y explique la manera en que se obviaron las variables globales
             - Explique la manera en que se realiza la sincronización de los procesos
-            - Resuelve el problema de la misma manera que la estrategia anterior
+            - ¿Resuelve el problema de la misma manera que la estrategia anterior?
 
          - Analice la versión con PThreads
             - Explique la manera en que se realiza la sincronización de los hilos
@@ -50,6 +53,7 @@ c) Explique con palabras, cómo resolvería algunos de estos problemas en OpenMP
 
 Referencias:
    - Libro de texto, capítulo 4, 5
-   - Enunciados:  https://os.ecci.ucr.ac.cr/ci1310/Concurrencia/
+   - Enunciados:  https://os.ecci.ucr.ac.cr/ci1310/Concurrencia
+   - Libro de Silberschatz:  https://os.ecci.ucr.ac.cr/slides/10th-Edition/2018-ppt/ch07.ppt
 
 

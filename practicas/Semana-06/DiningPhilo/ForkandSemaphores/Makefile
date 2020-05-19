@@ -20,6 +20,9 @@ Semaphore.o: Semaphore.h Semaphore.cc
 philoFork-gv.o: philoFork-gv.cc Semaphore.h Mutex.h
 	g++ -g -c philoFork-gv.cc
 
+philoFork-ngv.out: philoFork-ngv.c
+	gcc -g philoFork-ngv.c -o philoFork-ngv.out -lcurses
+
 philoFork-gv.out: philoFork-gv.o Semaphore.o Mutex.o
-	g++ -g -o philoFork.out philoFork-gv.o Semaphore.o Lock.o Mutex.o -lcurses
+	g++ -g -o philoFork-gv.out philoFork-gv.o Semaphore.o Lock.o Mutex.o -lcurses
 
