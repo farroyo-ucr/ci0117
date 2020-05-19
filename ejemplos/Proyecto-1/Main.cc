@@ -19,23 +19,30 @@
 
 
 // Shared variables
+   Ascensor ** ascensores;
+
 
 /*
  *  Rutina que ejecutan los hilos ascensor
  *  
  */
 void * hiloAscensor( void * param ) {
-   Ascensor * ascensor;
    long identificacion;
    char  * rotulo;
 
    identificacion = (long) param;
    rotulo = (char *) calloc( 64, 1 );
 
-   ascensor = new Ascensor( identificacion );
-
-   ascensor->Display( rotulo );
+   ascensores[ identificacion ] = new Ascensor( identificacion );
+//
+// Avisar que el ascensor ya esta en funcionamiento (Condition: Broadcast)
+// (forks)
+//
+   ascensores[ identificacion ]->Display( rotulo );
    printf( "%s", rotulo );
+   ascensores[ identificacion ]->Ejemplo();
+
+   delete ascensores[ identificacion ];
 
    free( rotulo );
 
@@ -50,19 +57,19 @@ void * hiloAscensor( void * param ) {
  */
 void Ascensores( long cantidad ) {
    long hilo;
-   pthread_t * ascensor;
+   pthread_t * ascensores;
 
-   ascensor = (pthread_t *) calloc( cantidad, sizeof( pthread_t ) );
-
-   for ( hilo = 0; hilo < cantidad; hilo++ ) {
-      pthread_create( & ascensor[ hilo ], NULL, hiloAscensor, (void *) hilo );
-   }
+   ascensores = (pthread_t *) calloc( cantidad, sizeof( pthread_t ) );
 
    for ( hilo = 0; hilo < cantidad; hilo++ ) {
-      pthread_join( ascensor[ hilo ], NULL );
+      pthread_create( & ascensores[ hilo ], NULL, hiloAscensor, (void *) hilo );
    }
 
-   free( ascensor );
+//   for ( hilo = 0; hilo < cantidad; hilo++ ) {
+//      pthread_join( ascensores[ hilo ], NULL );
+//   }
+
+   free( ascensores );
 
 }
 
@@ -74,11 +81,21 @@ void * hiloPersona( void * param ) {
 
    identificacion = (long) param;
    persona = new Persona( identificacion );
+
+   // Espera por el ascensor
+   // Indicar cuales son los pisos que necesita -> ascensor
+   // Espera hasta que el ascensor llegue
+   // Montarme (campo?)
+   // Esperar por el piso donde me bajo
+   // Bajarme del ascensor
+
    rotulo = (char *) calloc( 64, 1 );
    persona->Display( rotulo );
    printf( "%s", rotulo );
-
+   ascensores[ 0 ]->Registrar( identificacion, persona->getPisoDondeMeSubo(), persona->getPisoDondeMeBajo() );
    free( rotulo );
+
+   delete persona;
 
    return NULL;
 
@@ -120,6 +137,7 @@ int main( int argc, char ** argv ) {
    clock_t start, finish;
    double used;
 
+   ascensores = (Ascensor **) calloc( 10, sizeof( Ascensor * ) );
    srand( time( NULL ) );	// Puede poner esta linea en comentarios para generar una misma secuencia de numeros
    Ascensores( 1 );
    Personas( 50 );	// Primera oleada
@@ -128,5 +146,6 @@ int main( int argc, char ** argv ) {
 
    Personas( 40 );	// Segunda oleada
 
+   free( ascensores );
 }
 

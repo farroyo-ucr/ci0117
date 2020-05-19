@@ -48,6 +48,21 @@ Persona::Persona( long identificacion ) {
 Persona::~Persona() {
 }
 
+/*
+ *  getter
+ */
+unsigned int Persona::getPisoDondeMeSubo() {
+   return this->pisoDondeMeSubo;
+}
+
+
+/*
+ *  getter
+ */
+unsigned int Persona::getPisoDondeMeBajo() {
+   return this->pisoDondeMeBajo;
+}
+
 
 /*
  *  Metodo para desplegar los datos de los elementos de esta clase (toString)

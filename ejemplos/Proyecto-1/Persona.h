@@ -15,6 +15,8 @@ class Persona {
       Persona( long );
       ~Persona();
       void Display( char * );
+      unsigned int getPisoDondeMeSubo();
+      unsigned int getPisoDondeMeBajo();
 
    private:
       long idPersona;

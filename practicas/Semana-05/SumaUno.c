@@ -38,7 +38,7 @@ int SerialTest( int procesos, long * total ) {
 
       for ( i = 0; i < 1000; i++ ) {
          (* total)++;			// Suma uno
-//         usleep( 1 );
+         usleep( 1 );
       }
 
    }

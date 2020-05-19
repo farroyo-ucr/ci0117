@@ -10,15 +10,23 @@
  *
  */
 
+#include "Semaforo.h"
+
 class Ascensor {
    public:
       Ascensor( long );
       ~Ascensor();
       void Display( char * );
+      void Registrar( long, unsigned int, unsigned int );
+      void Ejemplo();
 
    private:
       long idAscensor;
       unsigned int pisoActual;
-
+      Semaforo * funcionar;
+      unsigned int perso[ 128 ];
+      unsigned int bajan[ 128 ];
+      unsigned int suben[ 128 ];
+      int sig;
 };
 

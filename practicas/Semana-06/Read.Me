@@ -1,0 +1,55 @@
+Read.Me Semana 5
+
+[Ejercicio propuesto: 2020/May/15; entrega 2020/May/22]
+
+Objetivos
+   Analizar ejemplos de sincronización de trabajadores
+   Revisar soluciones de problemas de sincronización en varios lenguajes
+   Programar soluciones en PThreads con la biblioteca "std::"
+   Revisar similaridades con OpenMP
+
+
+Tareas a realizar
+
+   - Para la explicaciones debe crear un documento (pdf) y adjuntarlo en el repositorio
+
+a) 
+   - Problema del agua
+      - Revise el enunciado del problema
+      - En el directorio "Agua"
+         - Analice la solución en C++ y empleando "fork", corra este ejemplo y explique la salida
+         - Cambie el código para que emplee su clase de semáforos, debe entregar este programa
+         - Revise la solución en Java
+            - Explique cómo se sincronizan los hilos
+         - Revise la solución en Python
+            - Explique cómo se sincronizan los hilos
+         - Programe una solución empleando "std", deben entregar este programa
+
+b)
+   - Problema de los filósofos comensales
+      - Revise el enunciado del problema
+      - En el directorio "DiningPhilo/ForkandSemaphores/"
+         - Revise la implantación de la clase "Semaphore"
+            - Explique el funcionamiento de los métodos "SP" y "SV"
+         - Revise la solución con procesos "philoFork-gv.cc"
+            - Explique la manera de manipular la pantalla y de desplegar la salida en el cuadro
+            - Estudie la solución y explique cuáles son las variables globles y cómo se utilizan
+            - Explique la manera en que se realiza la sincronización de los procesos
+
+         - Revise la solución con procesos "philoFork-ngv.cc"
+            - Estudie la solución y explique la manera en que se obviaron las variables globales
+            - Explique la manera en que se realiza la sincronización de los procesos
+            - Resuelve el problema de la misma manera que la estrategia anterior
+
+         - Analice la versión con PThreads
+            - Explique la manera en que se realiza la sincronización de los hilos
+
+
+c) Explique con palabras, cómo resolvería algunos de estos problemas en OpenMP, no haga un programa
+
+
+Referencias:
+   - Libro de texto, capítulo 4, 5
+   - Enunciados:  https://os.ecci.ucr.ac.cr/ci1310/Concurrencia/
+
+

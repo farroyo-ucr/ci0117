@@ -38,16 +38,16 @@ int main( int argc, char ** argv ) {
    long terminos, inicio, fin;
    int proceso;
    int pid;
-   double casiPi[ 10 ] = { 0 };
+   double casiPi[ 100 ] = { 0 };
 
    terminos = 1000000;
    if ( argc > 1 ) {
       terminos = atol( argv[ 1 ] );
    }
 
-   for ( proceso = 0; proceso < 10; proceso++ ) {
-      inicio = proceso * terminos/10;
-      fin = (proceso + 1) * terminos/10;
+   for ( proceso = 0; proceso < 100; proceso++ ) {
+      inicio = proceso * terminos/100;
+      fin = (proceso + 1) * terminos/100;
       pid = fork();
       if ( ! pid ) {
          calcularSumaParcialPi( casiPi, proceso, inicio, fin );
@@ -56,12 +56,12 @@ int main( int argc, char ** argv ) {
       }
    }
 
-   for ( proceso = 0; proceso < 10; proceso++ ) {
+   for ( proceso = 0; proceso < 100; proceso++ ) {
       int status;
       pid_t pid = wait( &status );
    }
 
-   for ( proceso = 1; proceso < 10; proceso++ ) {
+   for ( proceso = 1; proceso < 100; proceso++ ) {
       casiPi[ 0 ] += casiPi[ proceso ];
    }
 

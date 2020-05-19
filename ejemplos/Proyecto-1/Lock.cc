@@ -14,7 +14,7 @@
  */
 Lock::Lock() {
 
-   this->lock = new Mutex():
+   this->lock = new Mutex();
 
 }
 
@@ -51,7 +51,7 @@ int Lock::Release() {
 /*
  *
  */
-pthread_mutex_t * Lock::getLock() {
+Mutex * Lock::getLock() {
 
    return this->lock;
 
