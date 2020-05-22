@@ -14,8 +14,8 @@
 void H( int );
 void O( int );
 
-Semaphore sO;	// Inicializado en 1
-Semaphore sH;	// Inicializado en 1
+Semaphore sO;	// Inicializado en 0
+Semaphore sH;	// Inicializado en 0
 
 struct Compartidos {
         int nO;

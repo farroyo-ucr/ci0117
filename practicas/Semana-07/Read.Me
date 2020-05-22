@@ -1,0 +1,34 @@
+Read.Me Semana 7
+
+[Ejercicio propuesto: 2020/May/22; entrega 2020/May/29]
+
+Objetivos
+   Avanzar con el desarrollo del parser HTML
+   Revisar el manejo de archivos de texto en ambientes Unix
+   Determinar la estructura de datos para almacenar las etiquetas y su conteo
+
+
+Tareas a realizar
+
+   - Para la explicaciones debe crear un documento (pdf) y adjuntarlo en el repositorio
+   - Recuperar la página HTML de la ECCI: "curl https://www.ecci.ucr.ac.cr/ > ecci.html"
+
+a) Lector básico de archivos de texto
+   - Revisar el código facilitado para la lectura de un archivo de texto: "processHTML.c"
+      - Recuerde que el uso de "strtok" no es posible con hilos
+      - El resultado de este programa no es lo esperado para el proyecto programado
+
+
+b) Defina su estructura de datos para acumular la cantidad de etiquetas HTML que encuentra
+   - Puede ser cualquier estructura que soporte acceso concurrente por hilos sin producir condiciones de carrera
+
+
+c) Construya una clase "parserHTML" en C++ que reciba una línea y sea capaz de devolver, por medio de un iterador,
+   todas las etiquetas HTML que existen en esa línea y la cantidad de veces que aparece
+   - Puede utilizar el programa en shell "countHTML.sh" para sacar un listado de las etiquetas
+     HTML en el archivo indicado: "countHMTL.sh ecci.html", puede utilizar los datos de referencia
+     para comprobar si su "parser" está bien
+
+
+Referencias:
+
