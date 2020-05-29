@@ -10,10 +10,17 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
+#include <regex>
+#include <iostream>
 
 
 void processLine( const char * line ) {
    char * token;
+   std::regex texto( ">[^<]*<" );
+   std::string ecci;
+
+   ecci = regex_replace( line, texto, "> <" );
+//   std::cout << "ecci = " << ecci << std::endl;
 
    token = strtok( (char * ) line, "< >\t\n" );
    printf( "Lista de tokens: " );
@@ -37,7 +44,7 @@ int main( int argc, char ** argv ) {
    }
 
    size = 512;
-   line = calloc( 512, 1 );
+   line = (char *) calloc( 512, 1 );
 
    fileId = fopen( argv[ 1 ], "r" );
    if ( NULL == fileId ) {

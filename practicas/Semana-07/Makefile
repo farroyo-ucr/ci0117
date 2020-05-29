@@ -1,4 +1,4 @@
 
-processHTML: processHTML.c
-	gcc -g processHTML.c -o processHTML.out
+processHTML.out: processHTML.c
+	g++ -g processHTML.c -o processHTML.out
 

@@ -1,0 +1,35 @@
+Read.Me Semana 8
+
+[Ejercicio propuesto: 2020/May/28; entrega 2020/Jun/05]
+
+Objetivos
+   Avanzar con el desarrollo de la parte lectora de archivos con varios trabajadores y estrategias
+   Determinar los elementos internos necesarios para la clase lectora
+   Diseñar la cuarta estrategia para distribución de la carga entre trabajadores
+
+Tareas a realizar
+
+   - Para la explicaciones debe crear un documento (pdf) y adjuntarlo en el repositorio
+
+a) Explicar la estrategia de desarrollo propio para la distribución de la carga de la lectura de un archivo entre varios trabajadores
+   - Indicar si la estrategia considera un balance en la distribución de la carga
+   - Indicar el orden de lectura de las líneas del archivo de texto
+
+b) Construir una clase "FileReader" para poder distribuir las líneas de un archivo de texto entre varios trabajadores siguiendo varias estrategias
+   - Definir las constantes que podrá utilizar en esta clase
+      - Por ejemplo, para las estrategias
+   - Determinar los elementos necesarios para almacenar internamente en la clase
+   - Determinar las tareas que debe realizar el constructor de esta clase
+      - Indicar los parámetros necesarios para construir una instancia de esta clase
+      - Pensar cómo determinar el total de líneas del archivo
+      - Escribir la estrategia para lograr que todas las líneas del archivo sean asignadas a algún trabajador y para no dejar líneas sin procesar, especialmente en el caso que la cantidad total de líneas del archivo no sea exactamente divisible por el número de trabajadores
+   - Definir las tareas que debe realizar el destructor
+   - Analizar si su clase va a tener los métodos "hasNext()" y "getNext()" para poder iterar sobre los elementos que corresponden a cada uno de los trabajadores o, en su defecto, indicar la manera en que cada trabajador va a obtener las líneas del archivo que le corresponde.  Explicar el método para manejar el final del archivo para cada uno de los trabajadores; también para determinar cuál es su siguiente línea de lectura
+   - Recuerde que, como restricción del proyecto, su clase solo podrá mantener en memoria principal una de las líneas del archivo por cada trabajador
+   - También como restricción del proyecto, cada instancia de esta clase solo podrá tener su archivo abierto una sola vez
+
+c) Construya un programa de prueba para demostrar la funcionalidad de su clase lectora
+      - Haga pruebas utilizando todas las estrategias posibles
+      - En la estrategia dinámica, construya la instancia con tres tabajadores pero procese el archivo utilizando solo dos, debe comprobar que estos dos pueden procesar el archivo completamente
+
+
