@@ -1,0 +1,95 @@
+Read.Me Semana 9
+
+[Ejercicio propuesto: 2020/Jun/07; entrega 2020/Jun/12]
+
+Objetivos
+   - Aprender a utilizar OpenMP
+   - Compilar y correr programas en OpenMP
+   - Comprender el trabajo realizado por las indicaciones "pragma omp" agregadas en el código fuente
+
+Requisitos
+   - Verifique que su ambiente de trabajo pueda compilar programas con OpenMP
+   - Instalar "valgrind" para verificar los programas construidos con OpenMP
+   - Debe crear un documento para anotar los elementos solicitados y entregarlo
+
+Tareas a realizar
+   - Instalar "valgrind"
+
+   - Compilar y correr el programa "omp_hello.c"
+      - Correr el programa varias veces
+      - Explicar por qué la salida del programa varía
+
+   - Compilar y correr el programa "omp_fibo.c"
+      - Anotar si el programa despliega el resultado correctamente
+      - Explique la razón por lo que usted piensa el programa no funciona
+         - Anote el respaldo teórico de su razonamiento
+
+   - Compilar y correr el programa "omp_private.c"
+      - Explique el funcionamiento de hacer la variable x privada
+
+   - Compilar y correr el programa "omp_trap1.c"
+      - Corrar el programa para comprobar el resultado
+         - Escoja valores para los datos y anótelos para las demás pruebas
+         - Anote el valor del resultado del programa
+
+      - Elimine "#pragma omp critical"
+         - Compruebe si el resultado es el mismo
+         - Comente sobre el problema encontrado
+
+   - Compilar y correr el programa "omp_trap2a.c"
+      - Utilice los mismos datos que en el caso anterior
+      - Anote si el resultado es correcto
+
+   - Compilar y correr el programa "omp_trap2b.c"
+      - Utilice los mismos datos que en el caso anterior
+      - Anote si el resultado es correcto
+
+   - Compilar y correr el programa "omp_trap3.c"
+      - Utilice los mismos datos que en el caso anterior
+      - Anote si el resultado es correcto
+
+   - Compilar y correr el programa "omp_pi.c"
+      - Correr el programa y comprobar el resultado
+      - Explicar la manera que se realiza la acumulación de la suma
+
+   - Compilar y correr el programa "bubble.c"
+      - Correr el programa
+         - Agrege datos y compruebe el resultado
+
+      - Utilice el comando "time" para estimar el tiempo que le toma para realizar el cáculo
+
+         - Corra el comando "valgrind ./bubble"
+            - Interprete la salida y anote los errores que encuentre
+
+   - Compilar y correr el programa "omp_odd_even1.c"
+      - Correr el programa
+         - Agregue datos y compruebe la salida
+
+      - Utilice el comando "time" para estimar el tiempo que le toma para realizar el cáculo, haga una comparación con "bubble.c" y anote los resultados
+
+   - Compilar y correr el programa "omp_sin_sum.c"
+      - Correr el programa con 1 hilo y 10 000 términos
+         - Anote el tiempo
+      - Correr el programa con 2 hilos y 10 000 términos
+         - Anote el tiempo
+         - Calcule el "speedup"
+         - Note que el programa tiene "schedule(runtime)"
+            - Escriba en el shell, antes de correr el programa
+               - OMP_SCHEDULE="dynamic" (pruebe con "auto" y "static" también)
+            - Correr el programa de nuevo y anote las diferencias en los tres casos indicados
+
+
+   - Cambiar al directorio "omp_msg"
+      - Compilar y correr "omp_msgps.c"
+         - Analice la salida y describa que está sucediendo
+
+      - Busque e indique la funcionalidad de "barrier" y "atomic" en este programa
+
+   - Compilar y correr el programa "omp_mat_vect.c"
+      - Correr el programa y anotar los datos de corrida
+      - Cambiar alguno de los parámetros y anote los resultados
+
+Referencias
+   Código fuente: https://os.ecci.ucr.ac.cr/ci0117/slides/ipp-source.tgz
+
+
