@@ -1,0 +1,52 @@
+Read.Me Semana 11
+
+[Ejercicio propuesto: 2020/Jun/19; entrega 2020/Jun/26]
+
+Objetivos
+   - Avanzar con la tercera tarea programada
+   - Completar la versión con PThreads
+   - Utilizar OpenMP
+   - Construir una tabla comparativa
+
+Requisitos
+   - Verifique que su ambiente de trabajo pueda compilar programas con OpenMP
+   - Debe crear un documento para anotar los elementos solicitados y entregarlo
+
+Tareas a realizar
+   - Utilizar la clase "Chrono" para medir el tiempo
+      - Estudiar, compilar y probar la clase "Chrono"
+
+   - Programar una versión serial funcional de la primera pregunta del primer exmen parcial
+      - Puede completar su entrega del examen
+      - Incorporar en esta versión a la clase "Chrono" para medir el tiempo
+      - Realizar pruebas de esta versión serial y verificar que funciona bien
+
+   - Programar una versión equivalente con OpenMP
+      - Realizar mediciones de tiempo y comparar con la versión serial
+
+   - De ser necesario, complete su versión de PThreads
+      - Incorpore la clase "Chrono" para medir los tiempos
+      - Compruebe las mejoras en los tiempos
+
+   - Haga la tabla comparativa de estas tres versiones, se muestra un ejemplo donde N representa la cantidad de trabajadores
+
+	┌────────┬────────┬──────────┬───────┐
+	│ Serial │ OpenMP │ PThreads │   N   │
+	├────────┼────────┼──────────┼───────┤
+	│        │        │          │   2   │
+	├────────┼────────┼──────────┼───────┤
+	│        │        │          │   4   │
+	├────────┼────────┼──────────┼───────┤
+	│        │        │          │  16   │
+	├────────┼────────┼──────────┼───────┤
+	│        │        │          │  32   │
+	├────────┼────────┼──────────┼───────┤
+	│        │        │          │  64   │
+	└────────┴────────┴──────────┴───────┘
+	Tiempo empleado en segundos (s) para X términos
+
+
+Referencias
+   Enunciado del primer examen parcial
+   Clase "Chrono"
+

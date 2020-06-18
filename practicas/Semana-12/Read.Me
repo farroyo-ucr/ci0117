@@ -1,0 +1,44 @@
+Read.Me Semana 12
+
+[Ejercicio propuesto: 2020/Jun/26; entrega 2020/Jul/03]
+
+Objetivos
+   - Avanzar con la tercera tarea programada
+   - Comprobar ambiente para desarrollo en MPI
+   - Utilizar MPI
+   - Construir una tabla comparativa
+
+Requisitos
+   - Verifique que su ambiente de trabajo pueda compilar programas con MPI
+      - Debe instalar los paquetes "mpich" y "mpich-devel"
+   - Debe crear un documento para anotar los elementos solicitados y entregarlo
+   - Versión serial funcional de la primera pregunta del examen parcial, con la clase Chrono incorporada
+   - Versión funcional de la clase "Chrono"
+
+Tareas a realizar
+   - Programar una versión equivalente a la versión serial con MPI
+      - Realizar mediciones de tiempo y comparar con la versión serial
+
+   - Complete la tabla comparativa con esta cuarta versión, se muestra un ejemplo donde N representa la cantidad de trabajadores
+
+	┌────────┬────────┬──────────┬───────┬───────┐
+	│ Serial │ OpenMP │ PThreads │  MPI  │   N   │
+	├────────┼────────┼──────────┼───────┼───────┤
+	│        │        │          │       │    2  │
+	├────────┼────────┼──────────┼───────┼───────┤
+	│        │        │          │       │    4  │
+	├────────┼────────┼──────────┼───────┼───────┤
+	│        │        │          │       │   16  │
+	├────────┼────────┼──────────┼───────┼───────┤
+	│        │        │          │       │   32  │
+	├────────┼────────┼──────────┼───────┼───────┤
+	│        │        │          │       │   64  │
+	└────────┴────────┴──────────┴───────┴───────┘
+	Tiempo empleado en segundos (s) para X términos
+
+
+Referencias
+   Material de clases en tema MPI
+   Enunciado del primer examen parcial
+   Clase "Chrono"
+
