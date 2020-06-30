@@ -14,6 +14,7 @@ PATH := /opt/pgi/linux86-64-llvm/19.10/bin/:$(PATH)
 
 PREC     = FP64
 CC       = pgcc
+CPP      = pgc++
 OBJ     = o
 EXE	= out
 RUN     =
@@ -26,6 +27,10 @@ all: build run verify
 %: %.c
 	@echo $@
 	$(CC) $(CCFLAGS) $(ACCFLAGS) $< -o $@.$(EXE)
+
+%: %.cc
+	@echo $@
+	$(CPP) $(CCFLAGS) $(ACCFLAGS) $< -o $@.$(EXE)
 
 clean:
 	@echo 'Cleaning up...'
