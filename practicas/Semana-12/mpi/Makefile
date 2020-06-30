@@ -8,7 +8,7 @@
 #  Autor: Francisco Arroyo
 ################################################################################
 
-PATH := /usr/lib64/mpi/bin/:$(PATH)
+PATH := /usr/lib64/mpich/bin/:$(PATH)
 
 CC       = mpicc
 CPP	= mpic++
